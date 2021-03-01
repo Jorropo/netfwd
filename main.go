@@ -33,8 +33,8 @@ func main() {
 				return
 			}
 
-			go io.Copy(other, c)
 			go io.Copy(c, other)
+			io.Copy(other, c)
 		}(con)
 	}
 }
